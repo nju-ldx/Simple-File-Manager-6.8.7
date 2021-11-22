@@ -41,13 +41,13 @@ class CompressAsDialog(val activity: BaseSimpleActivity, val path: String, val c
         }
 
         AlertDialog.Builder(activity)
-<<<<<<< HEAD
+
                 .setPositiveButton(R.string.ok, null)
                 .setNegativeButton(R.string.cancel, null)
-=======
+
             .setPositiveButton(R.string.ok, null)
             .setNegativeButton(R.string.cancel, null)
->>>>>>> allname
+
             .setNeutralButton("clean",null)
             .create().apply {
                 activity.setupDialogStuff(view, this, R.string.compress_as) {
@@ -55,10 +55,10 @@ class CompressAsDialog(val activity: BaseSimpleActivity, val path: String, val c
                     getButton(AlertDialog.BUTTON_NEUTRAL).setOnClickListener(View.OnClickListener {
                         view.apply{
                             file_name.setText("")
-<<<<<<< HEAD
-=======
+
+
                             all_name.setText("")
->>>>>>> allname
+
                         }
                     })
                     getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(View.OnClickListener {
@@ -80,11 +80,11 @@ class CompressAsDialog(val activity: BaseSimpleActivity, val path: String, val c
                     })
 
 
-<<<<<<< HEAD
+
                 }
-=======
->>>>>>> allname
+
+
                 }
             }
     }
-}
+
