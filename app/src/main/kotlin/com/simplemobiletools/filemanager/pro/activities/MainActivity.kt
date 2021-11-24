@@ -424,5 +424,9 @@ class MainActivity : SimpleActivity() {
             checkWhatsNew(this, BuildConfig.VERSION_CODE)
         }
     }
-    
+    fun compress(view: android.view.View) {
+        val intent=Intent(this,MainActivity::class.java);
+        startActivity(intent);
+
+    }
 }
