@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.simplemobiletools.filemanager.pro",
+  "variantName": "processReleaseResources",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "versionCode": 102,
+      "versionName": "6.8.7",
+      "outputFile": "com.simplemobiletools.filemanager.pro.apk"
+    }
+  ]
+}

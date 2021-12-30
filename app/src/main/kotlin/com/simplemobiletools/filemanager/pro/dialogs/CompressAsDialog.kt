@@ -1,13 +1,11 @@
 package com.simplemobiletools.filemanager.pro.dialogs
 
-import android.content.Intent
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import com.simplemobiletools.commons.activities.BaseSimpleActivity
 import com.simplemobiletools.commons.dialogs.FilePickerDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.filemanager.pro.R
-import com.simplemobiletools.filemanager.pro.activities.FavoritesActivity
 import com.simplemobiletools.filemanager.pro.extensions.config
 import kotlinx.android.synthetic.main.dialog_compress_as.*
 import kotlinx.android.synthetic.main.dialog_compress_as.view.*
@@ -22,14 +20,14 @@ class CompressAsDialog(val activity: BaseSimpleActivity, val path: String, val c
         var realPath = path.getParentPath()
 
         view.apply {
-            file_name.setText(baseFilename)
+            file_name_change.setText(baseFilename)
 
             file_path.text = activity.humanizePath(realPath)
             val temp=file_path.text.toString()+'\\'+baseFilename+".zip"
             all_name.setText(temp)
             all_name.setOnClickListener{
                 val temp2=file_path.text.toString()+'\\'
-                val temp1=temp2+file_name.value+".zip"
+                val temp1=temp2+file_name_change.value+".zip"
                 all_name.setText(temp1)
             }
             file_path.setOnClickListener {
@@ -46,15 +44,15 @@ class CompressAsDialog(val activity: BaseSimpleActivity, val path: String, val c
             .setNeutralButton("clean",null)
             .create().apply {
                 activity.setupDialogStuff(view, this, R.string.compress_as) {
-                    showKeyboard(view.file_name)
+                    showKeyboard(view.file_name_change)
                     getButton(AlertDialog.BUTTON_NEUTRAL).setOnClickListener(View.OnClickListener {
                         view.apply{
-                            file_name.setText("")
+                            file_name_change.setText("")
                             all_name.setText("")
                         }
                     })
                     getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(View.OnClickListener {
-                        val name = view.file_name.value
+                        val name = view.file_name_change.value
                         when {
                             name.isEmpty() -> activity.toast(R.string.empty_name)
                             name.isAValidFilename() -> {

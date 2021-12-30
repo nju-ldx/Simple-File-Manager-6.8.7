@@ -37,6 +37,11 @@ android {
     buildTypes {
         debug {
             applicationIdSuffix ".debug"
+            android.applicationVariants.all { variant ->
+                variant.outputs.all {
+                    outputFileName = "${defaultConfig.applicationId}.apk"
+                }
+            }
         }
         release {
             minifyEnabled true
